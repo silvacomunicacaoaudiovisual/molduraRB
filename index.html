@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personalize sua foto de Perfil - RAYFRAN BEIRÃO - 10678</title>
+    <title>RAYFRAN BEIRÃO - 10678</title>
 
     <!-- Open Graph / WhatsApp / Redes Sociais -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://rayfranbeirao.site/"> <!-- Substitua pela URL final do seu site se necessário -->
+    <meta property="og:url" content="https://rayfranbeirao.site/">
     <meta property="og:title" content="Personalize sua foto de Perfil - RAYFRAN BEIRÃO - 10678">
     <meta property="og:description" content="Demonstre seu apoio nas redes sociais com a moldura oficial da campanha de forma rápida e prática.">
-    <meta property="og:image" content="https://rayfranbeirao.site/previa.jpg"> <!-- Se necessário, coloque o link completo da imagem hospedada aqui -->
+    <meta property="og:image" content="https://rayfranbeirao.site/previa.jpg">
+
+    <!-- FontAwesome para ícones profissionais -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         * {
@@ -23,109 +26,193 @@
         body {
             background: #11358a;
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(37, 100, 235, 0) 0%, transparent 40%),
+                radial-gradient(circle at 10% 20%, rgba(37, 100, 235, 0.25) 0%, transparent 40%),
                 radial-gradient(circle at 90% 80%, rgba(251, 191, 36, 0.15) 0%, transparent 40%);
             color: #ffffff;
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            padding: 20px 16px;
+            padding: 24px 16px;
         }
 
-        .app-card {
+        .container {
             width: 100%;
             max-width: 420px;
-            text-align: center;
-            position: relative;
-        }
-
-        /* Container da Logo */
-        .brand-logo-container {
-            margin-bottom: 16px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .brand-logo-container img {
-            max-width: 220px;
-            height: auto;
-            object-fit: contain;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
-        }
-
-        h1 {
-            font-size: 20px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 8px;
-            line-height: 1.3;
-        }
-
-        p.description {
-            font-size: 13px;
-            color: #ffffff;
-            margin-bottom: 24px;
-            line-height: 1.5;
-        }
-
-        /* Preview Ilustrativo Inicial usando foto.png */
-        .preview-showcase {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 24px;
-        }
-
-        .showcase-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 6px;
+            text-align: center;
         }
 
-        .showcase-circle {
-            width: 150px;
-            height: 150px;
+        /* Foto de Perfil Superior (Destaque) */
+        .profile-header {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-circle {
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             border: 4px solid #ffffff;
             overflow: hidden;
             background: #334155;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
             position: relative;
         }
 
-        .showcase-circle img {
+        .profile-circle img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .showcase-label {
-            font-size: 11px;
-            font-weight: 600;
-            color: #cbd5e1;
-            text-transform: uppercase;
+        /* Logo da Campanha com Efeito de Brilho Suave */
+        .brand-logo {
+            margin-bottom: 12px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .showcase-divider {
+        .brand-logo img {
+            max-width: 350px;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .brand-logo::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.4),
+                transparent
+            );
+            transform: skewX(-25deg);
+            animation: shineLogo 1.5s infinite;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        @keyframes shineLogo {
+            0% { left: -150%; }
+            30% { left: 150%; }
+            100% { left: 150%; }
+        }
+
+        /* Estilo da Faixa */
+        .brand-faixa {
+            margin-bottom: 24px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .brand-faixa img {
+            max-width: 100%;
+            width: 340px;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+        }
+
+        /* Botões do Menu Estilo Link-in-Bio (Brancos) */
+        .menu-list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .menu-btn {
+            width: 100%;
+            padding: 16px 20px;
+            background: #ffffff;
+            color: #11358a;
+            font-weight: 700;
+            font-size: 15px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s ease;
+        }
+
+        .menu-btn:hover {
+            background: #f1f5f9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Padronizando o tamanho de todos os ícones */
+        .menu-btn i, .btn-acao i {
             font-size: 18px;
-            color: #fbbf24;
-            font-weight: bold;
+            width: 22px;
+            text-align: center;
         }
 
-        /* Área do Editor / Canvas */
+        /* Seção do Gerador de Moldura */
+        .moldura-section {
+            width: 100%;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            padding: 24px 16px;
+            margin-bottom: 24px;
+            display: none;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .moldura-section h2 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .moldura-section p {
+            font-size: 13px;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        /* Borda branca no círculo central */
         .editor-wrapper {
             position: relative;
-            width: 260px;
-            height: 260px;
-            margin: 0 auto 20px auto;
-            border-radius: 1px;
+            width: 240px;
+            height: 240px;
+            margin: 0 auto 16px auto;
+            border-radius: 50%;
             overflow: hidden;
             background: #090d16;
-            box-shadow: 0 0 0 4px #3b82f6, 0 10px 25px rgba(0,0,0,0.5);
-            display: none;
+            box-shadow: 0 0 0 4px #ffffff, 0 10px 25px rgba(0,0,0,0.5);
         }
 
         #canvas {
@@ -147,23 +234,21 @@
             z-index: 10;
         }
 
-        /* Controles de Zoom */
         .zoom-control {
-            display: none;
             background: rgba(15, 23, 42, 0.6);
-            padding: 12px 16px;
-            border-radius: 14px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255,255,255,0.05);
+            padding: 10px 14px;
+            border-radius: 12px;
+            margin-bottom: 16px;
             text-align: left;
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
         .zoom-control label {
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 600;
             color: #94a3b8;
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .zoom-control input[type="range"] {
@@ -172,127 +257,172 @@
             cursor: pointer;
         }
 
-        /* Botões de Ação */
-        input[type="file"] {
-            display: none;
-        }
-
-        .btn {
+        /* Botões de Ação do Gerador (Brancos) */
+        .btn-acao {
             width: 100%;
-            padding: 16px;
-            border-radius: 16px;
+            padding: 14px;
+            border-radius: 14px;
             font-weight: 700;
-            font-size: 15px;
+            font-size: 14px;
             border: none;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
+            margin-bottom: 10px;
             transition: all 0.2s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            margin-bottom: 12px;
+            background: #ffffff;
+            color: #11358a;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, #fbbf24, #f59e0b);
-            color: #1e1b4b;
+        .btn-acao:hover {
+            background: #f1f5f9;
         }
 
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #fcd34d, #fbbf24);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4);
-        }
-
-        .btn-success {
-            background: linear-gradient(135deg, #10b981, #059669);
-            color: #ffffff;
+        .btn-baixar {
             display: none;
         }
 
-        .btn-success:hover {
-            background: linear-gradient(135deg, #34d399, #10b981);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+        .btn-fechar {
+            background: transparent;
+            color: #94a3b8;
+            font-size: 12px;
+            border: none;
+            cursor: pointer;
+            margin-top: 5px;
         }
 
-        /* Rodapés */
-        .footer-note {
-            font-size: 11px;
+        .social-footer {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .social-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: #ffffff;
-            margin-top: 15px;
-            line-height: 1.4;
+            text-decoration: none;
+            font-size: 18px;
+            background: rgba(255,255,255,0.05);
+            transition: transform 0.2s;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+            background: rgba(251, 191, 36, 0.2);
         }
 
         .legal-footer {
             font-size: 10px;
-            color: #ffffff;
-            margin-top: 20px;
-            border-top: 1px solid rgba(131, 131, 131, 0.87);
+            color: #94a3b8;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 14px;
             line-height: 1.4;
+            width: 100%;
         }
     </style>
 </head>
 <body>
 
-    <div class="app-card">
+    <div class="container">
         
-        <!-- Logo Personalizada (logo.png) -->
-        <div class="brand-logo-container">
+        <!-- Foto de Perfil Principal -->
+        <div class="profile-header">
+            <div class="profile-circle">
+                <img src="foto.png" alt="Rayfran Beirão">
+            </div>
+        </div>
+
+        <!-- Logo da Campanha com Efeito de Brilho -->
+        <div class="brand-logo">
             <img src="logo.png" alt="Logo RAYFRAN BEIRÃO 10678">
         </div>
 
-        <h1>Personalize sua foto de perfil</h1>
-        <p class="description">Demonstre seu apoio nas redes sociais com a moldura oficial da campanha de forma rápida e prática.</p>
+        <!-- Faixa logo abaixo da logo -->
+        <div class="brand-faixa">
+            <img src="faixa.png" alt="Faixa Oficial">
+        </div>
 
-        <!-- Preview demonstrativo com foto.png -->
-        <div class="preview-showcase" id="previewShowcase">
-            <div class="showcase-item">
-                <div class="showcase-circle">
-                    <img src="foto.png" alt="Exemplo Original">
-                </div>
-                <span class="showcase-label">Original</span>
+        <!-- Menu de Botões -->
+        <div class="menu-list">
+            <button class="menu-btn" id="openMolduraBtn">
+                <i class="fa-solid fa-camera-retro"></i> Personalize sua foto de perfil
+            </button>
+
+            <a href="https://www.instagram.com/rayfranbeiraoap/" target="_blank" class="menu-btn">
+                <i class="fa-brands fa-instagram"></i> Siga no Instagram
+            </a>
+
+            <a href="https://www.facebook.com/RayfranBeiraooficial?mibextid=wwXIfr&rdid=Wc88VO0eccqw1ngk&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1D7FzZQ5F9%2F%3Fmibextid%3DwwXIfr%26utm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio#" target="_blank" class="menu-btn">
+                <i class="fa-brands fa-facebook-f"></i> Siga no Facebook
+            </a>
+
+            <a href="#" target="_blank" class="menu-btn">
+                <i class="fa-solid fa-folder-open"></i> Materiais de Campanha
+            </a>
+
+            <a href="#" target="_blank" class="menu-btn">
+                <i class="fa-solid fa-music"></i> Músicas de Campanha
+            </a>
+        </div>
+
+        <!-- SEÇÃO DA MOLDURA -->
+        <div class="moldura-section" id="molduraSection">
+            <h2>Monte sua Foto com a Moldura</h2>
+            <p>Escolha como deseja enviar sua foto, ajuste o enquadramento e baixe pronta para usar!</p>
+
+            <div class="editor-wrapper">
+                <canvas id="canvas" width="600" height="600"></canvas>
+                <img src="moldura.png" alt="Moldura" class="moldura-overlay">
             </div>
-            <div class="showcase-divider">➔</div>
-            <div class="showcase-item">
-                <div class="showcase-circle">
-                    <img src="foto.png" alt="Exemplo Com Moldura" style="position: absolute; top:0; left:0; width:100%; height:100%;">
-                    <img src="moldura.png" alt="Moldura" style="position: absolute; top:0; left:0; width:100%; height:100%; z-index:2;">
-                </div>
-                <span class="showcase-label">Com Moldura</span>
+
+            <div class="zoom-control" id="zoomControl" style="display: none;">
+                <label for="zoomRange">Ajustar zoom e posição:</label>
+                <input type="range" id="zoomRange" min="0.4" max="3" step="0.01" value="1">
             </div>
+
+            <!-- Inputs de arquivo ocultos separados para Câmera e Galeria -->
+            <input type="file" id="cameraInput" accept="image/*" capture="user" style="display: none;">
+            <input type="file" id="galleryInput" accept="image/*" style="display: none;">
+            
+            <!-- Botões de escolha iniciais -->
+            <div id="selectSourceButtons" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px;">
+                <button class="btn-acao" id="cameraBtn">
+                    <i class="fa-solid fa-camera"></i> Tirar foto com a câmera
+                </button>
+                <button class="btn-acao" id="galleryBtn" style="background: #f1f5f9; color: #11358a;">
+                    <i class="fa-solid fa-images"></i> Escolher da galeria
+                </button>
+            </div>
+
+            <!-- Botão de Trocar Foto (aparece após carregar) -->
+            <button class="btn-acao" id="trocarFotoBtn" style="display: none; background: #f1f5f9; color: #11358a; margin-bottom: 10px;">
+                <i class="fa-solid fa-rotate"></i> Escolher outra foto
+            </button>
+
+            <button class="btn-acao btn-baixar" id="downloadBtn">
+                <i class="fa-solid fa-cloud-arrow-down"></i> Baixar foto pronta
+            </button>
+
+            <button class="btn-fechar" id="closeMolduraBtn">✖ Fechar gerador</button>
         </div>
 
-        <!-- Área do Editor Interativo -->
-        <div class="editor-wrapper" id="editorWrapper">
-            <canvas id="canvas" width="600" height="600"></canvas>
-            <img src="moldura.png" alt="Moldura" class="moldura-overlay">
+        <!-- Rodapé com Ícones Sociais (Apenas Instagram e Facebook) -->
+        <div class="social-footer">
+            <a href="https://www.instagram.com/rayfranbeiraoap/" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/RayfranBeiraooficial?mibextid=wwXIfr&rdid=Wc88VO0eccqw1ngk&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1D7FzZQ5F9%2F%3Fmibextid%3DwwXIfr%26utm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio#" target="_blank" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
         </div>
 
-        <!-- Controles de Zoom -->
-        <div class="zoom-control" id="zoomControl">
-            <label for="zoomRange">Ajustar enquadramento e zoom:</label>
-            <input type="range" id="zoomRange" min="0.4" max="3" step="0.01" value="1">
-        </div>
-
-        <!-- Botões de Envio e Download -->
-        <input type="file" id="uploadInput" accept="image/*">
-        
-        <button class="btn btn-primary" id="uploadBtn">
-            📷 Enviar minha foto
-        </button>
-
-        <button class="btn btn-success" id="downloadBtn">
-            📥 Baixar foto pronta
-        </button>
-
-        <!-- Informações e Termos -->
-        <div class="footer-note">
-            A moldura é para foto de perfil e story. Ao gerar, você confirma que a foto é sua e está de acordo com a nossa Política de Privacidade.
-        </div>
-
+        <!-- Nota Legal -->
         <div class="legal-footer">
             Candidato a Deputado Estadual <strong>RAYFRAN BEIRÃO</strong> nº 10678 - CAMPANHA ELEITORAL CNPJ: 68.546.116/0001-64
         </div>
@@ -300,11 +430,27 @@
     </div>
 
     <script>
-        const uploadInput = document.getElementById('uploadInput');
-        const uploadBtn = document.getElementById('uploadBtn');
+        const openMolduraBtn = document.getElementById('openMolduraBtn');
+        const molduraSection = document.getElementById('molduraSection');
+        const closeMolduraBtn = document.getElementById('closeMolduraBtn');
+
+        openMolduraBtn.addEventListener('click', () => {
+            molduraSection.style.display = 'block';
+            molduraSection.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        closeMolduraBtn.addEventListener('click', () => {
+            molduraSection.style.display = 'none';
+        });
+
+        const cameraInput = document.getElementById('cameraInput');
+        const galleryInput = document.getElementById('galleryInput');
+        const cameraBtn = document.getElementById('cameraBtn');
+        const galleryBtn = document.getElementById('galleryBtn');
+        const selectSourceButtons = document.getElementById('selectSourceButtons');
+        const trocarFotoBtn = document.getElementById('trocarFotoBtn');
+
         const downloadBtn = document.getElementById('downloadBtn');
-        const editorWrapper = document.getElementById('editorWrapper');
-        const previewShowcase = document.getElementById('previewShowcase');
         const zoomControl = document.getElementById('zoomControl');
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
@@ -312,18 +458,33 @@
 
         let userImage = new Image();
         let isImageLoaded = false;
-
         let imgX = 0;
         let imgY = 0;
         let scale = 1;
         let isDragging = false;
         let startX, startY;
 
-        uploadBtn.addEventListener('click', () => {
-            uploadInput.click();
+        // Disparar Câmera
+        cameraBtn.addEventListener('click', () => {
+            cameraInput.click();
         });
 
-        uploadInput.addEventListener('change', (e) => {
+        // Disparar Galeria
+        galleryBtn.addEventListener('click', () => {
+            galleryInput.click();
+        });
+
+        // Botão para resetar e escolher outra foto
+        trocarFotoBtn.addEventListener('click', () => {
+            selectSourceButtons.style.display = 'flex';
+            trocarFotoBtn.style.display = 'none';
+            zoomControl.style.display = 'none';
+            downloadBtn.style.display = 'none';
+            isImageLoaded = false;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        });
+
+        function handleImageProcess(e) {
             const file = e.target.files[0];
             if (file) {
                 const reader = new FileReader();
@@ -331,12 +492,10 @@
                     userImage.src = event.target.result;
                     userImage.onload = function() {
                         isImageLoaded = true;
-                        
-                        // Troca a visualização inicial pelo editor interativo
-                        previewShowcase.style.display = 'none';
-                        editorWrapper.style.display = 'block';
                         zoomControl.style.display = 'block';
                         downloadBtn.style.display = 'flex';
+                        selectSourceButtons.style.display = 'none';
+                        trocarFotoBtn.style.display = 'flex';
 
                         scale = Math.max(canvas.width / userImage.width, canvas.height / userImage.height);
                         zoomRange.value = scale;
@@ -344,12 +503,14 @@
                         imgY = (canvas.height - userImage.height * scale) / 2;
                         
                         drawImage();
-                        uploadBtn.innerHTML = '🔄 Trocar foto selecionada';
                     }
                 }
                 reader.readAsDataURL(file);
             }
-        });
+        }
+
+        cameraInput.addEventListener('change', handleImageProcess);
+        galleryInput.addEventListener('change', handleImageProcess);
 
         function drawImage() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -370,7 +531,6 @@
             drawImage();
         });
 
-        // Eventos de Arraste Mouse
         canvas.addEventListener('mousedown', (e) => {
             if (!isImageLoaded) return;
             isDragging = true;
@@ -385,7 +545,6 @@
         });
         window.addEventListener('mouseup', () => { isDragging = false; });
 
-        // Eventos de Arraste Touch (Celular)
         canvas.addEventListener('touchstart', (e) => {
             if (!isImageLoaded) return;
             isDragging = true;
@@ -400,9 +559,28 @@
         });
         window.addEventListener('touchend', () => { isDragging = false; });
 
-// Botão de Download Compatível com iPhone / Safari
         downloadBtn.addEventListener('click', () => {
             if (!isImageLoaded) return;
+
+            const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+            // No iOS, a janela precisa ser aberta IMEDIATAMENTE no clique
+            // (de forma síncrona), antes de qualquer processamento assíncrono,
+            // senão o Safari bloqueia como pop-up e nada acontece.
+            let win = null;
+            if (isiOS) {
+                win = window.open('', '_blank');
+                if (win) {
+                    win.document.write(`
+                        <html>
+                            <head><title>Salvar Foto</title></head>
+                            <body style="background:#11358a; text-align:center; color:white; font-family:sans-serif; padding:20px;">
+                                <h2>Preparando sua foto...</h2>
+                            </body>
+                        </html>
+                    `);
+                }
+            }
 
             const finalCanvas = document.createElement('canvas');
             finalCanvas.width = 600;
@@ -420,28 +598,34 @@
             molduraImg.src = document.querySelector('.moldura-overlay').src;
             molduraImg.onload = function() {
                 finalCtx.drawImage(molduraImg, 0, 0, finalCanvas.width, finalCanvas.height);
-
                 const dataURL = finalCanvas.toDataURL('image/png');
 
-                // Detecta se é iPhone/iPad/iPod
-                const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-
                 if (isiOS) {
-                    // No iPhone, abrir em nova aba é a forma mais segura de permitir salvar a foto
-                    let win = window.open();
-                    win.document.write(`
-                        <html>
-                            <head><title>Salvar Foto</title></head>
-                            <body style="background:#11358a; text-align:center; color:white; font-family:sans-serif; padding:20px;">
-                                <h2>Toque e segure na foto abaixo e escolha "Salvar nas Fotos"</h2>
-                                <img src="${dataURL}" style="width:100%; max-width:400px; border-radius:12px; margin-top:15px; box-shadow:0 5px 15px rgba(0,0,0,0.5);">
-                            </body>
-                        </html>
-                    `);
+                    if (win) {
+                        win.document.open();
+                        win.document.write(`
+                            <html>
+                                <head><title>Salvar Foto</title></head>
+                                <body style="background:#11358a; text-align:center; color:white; font-family:sans-serif; padding:20px;">
+                                    <h2>Toque e segure na foto abaixo e escolha "Salvar Imagem"</h2>
+                                    <img src="${dataURL}" style="width:100%; max-width:350px; border-radius:50%; margin-top:15px; box-shadow:0 5px 15px rgba(0,0,0,0.5);">
+                                </body>
+                            </html>
+                        `);
+                        win.document.close();
+                    } else {
+                        alert('Não foi possível abrir a janela para salvar. Toque e segure na imagem para salvá-la.');
+                        const link = document.createElement('a');
+                        link.href = dataURL;
+                        link.target = '_blank';
+                        link.rel = 'noopener';
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                    }
                 } else {
-                    // Para Android e Computador, o download direto continua funcionando
                     const link = document.createElement('a');
-                    link.download = 'Rayfran-Beirão-10678-perfil.png';
+                    link.download = 'Rayfran-Beirao-10678-perfil.png';
                     link.href = dataURL;
                     link.click();
                 }
